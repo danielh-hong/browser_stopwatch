@@ -15,7 +15,6 @@ To use the stopwatch program, follow these steps:
 
 1. Clone the repository to your local machine.
 2. Open the terminal and navigate to the project directory.
-3. Run the program using the command `python stopwatch.py`.
 4. Use the following commands to control the stopwatch:
     - `start` - Start the stopwatch.
     - `stop` - Stop the stopwatch.
