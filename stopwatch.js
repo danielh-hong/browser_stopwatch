@@ -53,22 +53,21 @@ function formatTime(timeInMilliseconds) {
     return formattedTime;
 }
 function getRandomColor() {
-    var letters = '3456789'; // Exclude 0
-    var zeroPosition = Math.floor(Math.random() * 3); // Determine which color component will be zero
+    var letters = '6789AB'; 
+    var zeroPosition = Math.floor(Math.random() * 3) * 2; // Determine which color component will be zero
 
-    var color1 = '#';
-    var color2 = '#';
-    for (var i = 0; i < 3; i++) {
-        if (i === zeroPosition) {
-            var zeroComponent = letters[Math.floor(Math.random() * letters.length)];
-            color1 += zeroComponent + zeroComponent; // Add zero component
-            color2 += zeroComponent + zeroComponent; // Add zero component
+    var color1 = '';
+    var color2 = '';
+    for (var i = 0; i < 6; i++) {
+        if (i === zeroPosition || i === zeroPosition + 1) {
+            color1 += '0'; // Add zero component
+            color2 += '0'; // Add zero component
         } else {
-            color1 += letters[Math.floor(Math.random() * letters.length)] + letters[Math.floor(Math.random() * letters.length)]; // Add non-zero component
-            color2 += letters[Math.floor(Math.random() * letters.length)] + letters[Math.floor(Math.random() * letters.length)]; // Add non-zero component
+            color1 += letters[Math.floor(Math.random() * letters.length)]; // Add non-zero component
+            color2 += letters[Math.floor(Math.random() * letters.length)]; // Add non-zero component
         }
     }
-    return [color1, color2];
+    return ['#' + color1, '#' + color2];
 }
 
 window.onload = function() {
@@ -79,3 +78,13 @@ window.onload = function() {
     document.body.style.background = "linear-gradient(" + angle + "deg, " + colors[0] + ", " + colors[1] + ")";
 
 }
+
+
+document.getElementById("change-background").addEventListener("click", function() {
+    var colors = getRandomColor();
+    var angle = Math.floor(Math.random() * 361); // Generate a random angle between 0 and 360 degrees
+
+    // Use the colors and angle to create a gradient
+    document.body.style.background = "linear-gradient(" + angle + "deg, " + colors[0] + ", " + colors[1] + ")";
+
+});

@@ -77,14 +77,20 @@ body {
     text-shadow: 0px 10px 25px rgba(0, 0, 0, 0.7);
 }
 
-#buttons {
+#stopwatch-buttons {
     display: flex;
     justify-content: center;
 }
 
+#change-background {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    pointer-events: auto;
 
+}
 
-button {
+#startStop, #lap, #reset {
     font-size: 20px;
     margin: 10px;
     padding: 10px 20px;
@@ -98,10 +104,41 @@ button {
     pointer-events: auto;
 }
 
-button:hover {
+#startStop:hover, #lap:hover, #reset:hover {
     background: linear-gradient(to right, #0083b0, #00b4db);
     transform: scale(1.1);
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.7);
+}
+#change-background {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 2px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+}
+
+#change-background:hover {
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+/* Mobile devices */
+@media (hover: none) {
+    #startStop:active, #lap:active, #reset:active {
+        background: linear-gradient(to right, #0083b0, #00b4db);
+        transform: scale(1.1);
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.7);
+        transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out; /* Faster transition */
+    }
 }
 
 #laps {
