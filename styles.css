@@ -96,16 +96,16 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background: linear-gradient(to right, #00b4db, #0083b0);
+    background: transparent;
     color: white;
     cursor: pointer;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition-duration: 0.4s;
     pointer-events: auto;
 }
 
 #startStop:hover, #lap:hover, #reset:hover {
-    background: linear-gradient(to right, #0083b0, #00b4db);
+    background: transparent;
     transform: scale(1.1);
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.7);
 }
@@ -126,20 +126,10 @@ body {
 }
 
 #change-background:hover {
-    color: white;
     transform: scale(1.1);
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.7);
 }
 
-/* Mobile devices */
-@media (hover: none) {
-    #startStop:active, #lap:active, #reset:active {
-        background: linear-gradient(to right, #0083b0, #00b4db);
-        transform: scale(1.1);
-        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.7);
-        transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out; /* Faster transition */
-    }
-}
 
 #laps {
     width: 300px; /* Fixed width */
