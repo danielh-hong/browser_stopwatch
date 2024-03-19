@@ -2,6 +2,7 @@ var stopwatchInterval;
 var startTime;
 var elapsedTime = 0;
 var lapCounter = 0; // l counter
+var lastLapTime = 0; // Last lap time
 
 document.getElementById("startStop").addEventListener("click", function() {
     if (this.innerHTML === "Start") {
@@ -19,10 +20,13 @@ document.getElementById("startStop").addEventListener("click", function() {
 
 document.getElementById("lap").addEventListener("click", function() {
     lapCounter++; // Increment lap counter
-    var lapTime = document.getElementById("stopwatch").innerHTML;
+    var lapTime = elapsedTime; // Get the current elapsed time
+    var splitTime = lapTime - lastLapTime; // Calculate the split time
+    lastLapTime = lapTime; // Update the last lap time
+
     var lapDiv = document.createElement("div");
     lapDiv.classList.add("lap");
-    lapDiv.innerHTML = "Lap " + lapCounter + ": " + lapTime; // Include lap number
+    lapDiv.innerHTML = "Lap " + lapCounter + ": " + formatTime(lapTime) + "&nbsp;&nbsp;&nbsp;Split: " + formatTime(splitTime); // Include lap number and split time
     var laps = document.getElementById("laps");
     laps.appendChild(lapDiv);
     laps.scrollTop = laps.scrollHeight; // Auto-scroll to newest lap
@@ -34,9 +38,9 @@ document.getElementById("reset").addEventListener("click", function() {
     document.getElementById("stopwatch").innerHTML = "00:00:00";
     elapsedTime = 0;
     lapCounter = 0; // Reset lap counter
+    lastLapTime = 0; // Reset last lap time
     document.getElementById("laps").innerHTML = "";
 });
-
 
 function formatTime(timeInMilliseconds) {
     var time = new Date(timeInMilliseconds);
@@ -88,3 +92,4 @@ document.getElementById("change-background").addEventListener("click", function(
     document.body.style.background = "linear-gradient(" + angle + "deg, " + colors[0] + ", " + colors[1] + ")";
 
 });
+

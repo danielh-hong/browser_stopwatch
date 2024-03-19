@@ -1,4 +1,4 @@
-particlesJS('particles-js', {
+var config = {
     "particles": {
       "number": {
         "value": 520,
@@ -89,5 +89,23 @@ particlesJS('particles-js', {
       }
     },
     "retina_detect": true
-});
+};
 
+
+// Initialize particles.js with the initial configuration
+particlesJS('particles-js', config);
+
+document.getElementById('particle-slider').addEventListener('input', _.throttle(function() {
+  var density = this.value * 20;
+
+  // Update the number of particles in the configuration
+  config.particles.number.value = density;
+
+  // Clear the canvas
+  var canvas = document.querySelector('#particles-js canvas');
+  var context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Re-initialize the particles.js system with the updated configuration
+  particlesJS('particles-js', config);
+}, 1000)); // Update the particles at most once every 100 milliseconds

@@ -61,8 +61,72 @@ body {
     align-items: center;
     height: 100vh;
     pointer-events: none; /* Disabled   pointer events -- Make sure to set auto to all interactive elements*/
-
 }
+
+/* Slider */
+
+#particle-slider-container {
+    position: absolute;
+    z-index: 5;
+    left: 20px;
+    bottom: 20px;
+    pointer-events: auto;
+}  
+
+#particle-slider {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 15px; /* Specified height */
+    background: transparent; /* Transparent background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Shadow for better visibility */
+}
+
+#particle-slider:hover {
+    opacity: 1; /* Fully visible on hover */
+}
+
+#particle-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 10px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    background: black; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Shadow for better visibility */
+}
+
+#particle-slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Shadow for better visibility */
+}
+
+#particle-slider-label {
+    position: absolute;
+    bottom: 100%; /* Position it at the bottom of the slider */
+    color: #4CAF50; /* Green text to match the slider handle */
+    font-size: 10px; /* Adjust as needed */
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    text-align: left;
+
+    opacity: 0.3; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+#particle-slider-label:hover {
+    opacity: 1; /* Fully visible on hover */
+}
+
+/* */
 
 #stopwatch {
     font-size: 80px;
@@ -158,7 +222,7 @@ body {
 
 .lap {
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 15px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 

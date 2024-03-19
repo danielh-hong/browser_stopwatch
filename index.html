@@ -10,6 +10,8 @@
 
     <div id="particles-js1" class="gradient"></div>
     <div id="particles-js2" class="gradient"></div>
+
+
     <div id="content">
         <div id="stopwatch">00:00:00</div>
         <div id="stopwatch-buttons">
@@ -21,8 +23,15 @@
             <button id="change-background">Change Background</button>
         </div>
         <div id="laps"></div>
+        <div id="particle-slider-container">
+            <input type="range" min="1" max="100" value="50" class="slider" id="particle-slider">
+        <div id="particle-slider-label">Particle Density</div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="colorPicker.js"></script>
+    <script src="particleDensity.js"></script>
     <script src="app.js"></script>
     <script src="stopwatch.js"></script>
     <!-- <script src="mousetrail.js"></script> -->
