@@ -109,3 +109,4 @@ document.getElementById('particle-slider').addEventListener('input', _.throttle(
   // Re-initialize the particles.js system with the updated configuration
   particlesJS('particles-js', config);
 }, 1000)); // Update the particles at most once every 100 milliseconds
+

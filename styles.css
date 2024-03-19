@@ -63,6 +63,7 @@ body {
     pointer-events: none; /* Disabled   pointer events -- Make sure to set auto to all interactive elements*/
 }
 
+
 /* Slider */
 
 #particle-slider-container {
@@ -97,6 +98,7 @@ body {
     height: 20px; /* Slider handle height */
     background: black; /* Green background */
     cursor: pointer; /* Cursor on hover */
+    opacity: 0.8;
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Shadow for better visibility */
 }
 
