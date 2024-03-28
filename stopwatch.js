@@ -57,21 +57,17 @@ function formatTime(timeInMilliseconds) {
     return formattedTime;
 }
 function getRandomColor() {
-    var letters = '6789AB'; 
-    var zeroPosition = Math.floor(Math.random() * 3) * 2; // Determine which color component will be zero
+    var hue1 = Math.floor(Math.random() * 361);
+    var hue2 = (hue1 + Math.floor(Math.random() * 180) + 180) % 360; // Generate a complementary hue
+    var saturation1 = Math.floor(Math.random() * 101); // Generate a random saturation between 0 and 100
+    var saturation2 = Math.floor(Math.random() * 101); // Generate a random saturation between 0 and 100
+    var lightness1 = Math.floor(Math.random() * 51) + 25; // Generate a random lightness between 25 and 75
+    var lightness2 = Math.floor(Math.random() * 51) + 25; // Generate a random lightness between 25 and 75
 
-    var color1 = '';
-    var color2 = '';
-    for (var i = 0; i < 6; i++) {
-        if (i === zeroPosition || i === zeroPosition + 1) {
-            color1 += '0'; // Add zero component
-            color2 += '0'; // Add zero component
-        } else {
-            color1 += letters[Math.floor(Math.random() * letters.length)]; // Add non-zero component
-            color2 += letters[Math.floor(Math.random() * letters.length)]; // Add non-zero component
-        }
-    }
-    return ['#' + color1, '#' + color2];
+    var color1 = "hsl(" + hue1 + "," + saturation1 + "%," + lightness1 + "%)";
+    var color2 = "hsl(" + hue2 + "," + saturation2 + "%," + lightness2 + "%)";
+
+    return [color1, color2];
 }
 
 window.onload = function() {
@@ -93,3 +89,20 @@ document.getElementById("change-background").addEventListener("click", function(
 
 });
 
+
+document.getElementById('change-background-color').addEventListener('click', function() {
+    // Get the color from the color picker
+    var colors1 = document.getElementById('color-picker1').value;
+    var colors2 = document.getElementById('color-picker2').value;
+    // Set the background color
+    var angle = Math.floor(Math.random() * 361); // Generate a random angle between 0 and 360 degrees
+
+    // Use the colors and angle to create a gradient
+    document.body.style.background = "linear-gradient(" + angle + "deg, " + colors1 + ", " + colors2 + ")";
+});
+/*
+document.getElementById('change-background-color').addEventListener('click', function() {
+    var color = document.getElementById('color-picker').value;
+    document.body.style.background = color;
+});
+*/

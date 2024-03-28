@@ -79,6 +79,7 @@ body {
     appearance: none;
     width: 100%; /* Full-width */
     height: 15px; /* Specified height */
+    margin-bottom: 10px; /* Specified margin */
     background: transparent; /* Transparent background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -146,6 +147,83 @@ body {
 #stopwatch-buttons {
     display: flex;
     justify-content: center;
+}
+
+
+
+#background-button-color {
+    display: flex;
+    align-items: left;
+    justify-content: space-around;
+    height: 30px;
+}
+
+#change-background-color {
+    width: 60px;
+    height: 30px;
+    font-size: 8px;
+    margin-left: 10px;
+    padding: 3px 3px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    transition-duration: 0.2s;
+    pointer-events: auto;
+}
+
+
+#change-background-color:hover {
+    background: transparent;
+    transform: scale(1.1);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+#color-picker-wrapper1 {
+    display: inline-block;
+    transition-duration: 0.2s;
+}
+
+#color-picker-wrapper1:hover {
+    transform: scale(1.1);
+}
+
+#color-picker1 {
+    width: 80px;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 10px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#color-picker1:hover {
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+#color-picker2 {
+    width: 80px;
+    height: 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 10px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#color-picker2:hover {
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.7);
 }
 
 #change-background {

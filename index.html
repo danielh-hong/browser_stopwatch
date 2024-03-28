@@ -23,7 +23,7 @@
             <button id="reset">Reset</button>
         </div>
         <div id="background-button">
-            <button id="change-background">Change Background</button>
+            <button id="change-background">Random Background</button>
         </div>
         <div id="laps"></div>
         
@@ -33,10 +33,28 @@
             <input type="range" min="1" max="100" value="50" class="slider" id="particle-slider">
         <div id="particle-slider-label">Particle Density</div>
        
+        <div id="background-button-color">
+
+            <div id="color-picker-wrapper1">
+                <input type="text" id="color-picker1" data-coloris>
+            </div>
+            <div id="color-picker-wrapper2">
+                <input type="text" id="color-picker2" data-coloris>
+            </div>
+            <button id="change-background-color">Change Background</button>
+        </div>
+        <!--
+        <div id="background-button-color">
+            <input data-jscolor="" id="color-picker">
+            <button id="change-background-color">Change Background</button>
+        </div> -->
     
     </div>
 
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.4.5/jscolor.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
